@@ -1,0 +1,23 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: config server
+  profiles:
+    active: native
+  cloud:
+      config:
+          server:
+              native:
+                  searchLocations: 
+                    - classpath:configclient
+                    - classpath:springpgsql
+                    - classpath:EurekaServer
+                    - classpath:zuulserver
+                    - classpath:Hystrix
+                    - classpath:LocationService
+                    - classpath:unit-service
+                    - classpath:ribbon-service
+                    - classpath:backendService
+                    - classpath:frontendService

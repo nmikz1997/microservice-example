@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: ribbon-service
+  thymeleaf:
+    cache: false
+    
+eureka:
+  instance:
+    appname: ribbon-service
+  client:
+    fetchRegistry: true
+    service-url:
+      default-zone: http://localhost:8761/eureka
+      
+server:
+  port: 80
+  
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

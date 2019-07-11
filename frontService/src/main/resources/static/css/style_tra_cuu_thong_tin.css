@@ -1,0 +1,42 @@
+.divHomeDanhMuc{
+	background-color: #ffffff;
+	border-radius: 5px;
+	padding: 10px;
+}
+
+.divHomeDanhMuc thead th {
+    background-color: #0f9df7;
+    color: white;
+}
+
+.divHomeDanhMuc .dropdown-toggle {
+    text-align: left;
+}
+
+
+.textTitle{
+	margin-left: 5px;
+}
+
+.ul-tinh-thanh .list-group-item {
+    padding: 5px 10px;
+}
+
+.ul-tinh-thanh li:hover{
+	background-color: #0f9df740;
+}
+
+.row.row-tra-cuu-thong-tin ul>li:hover {
+    background-color: #0f9df75e;
+    cursor: pointer;
+}
+.row.row-tra-cuu-thong-tin .list-group-item {
+    padding: 5px 10px;
+    cursor: pointer;
+    background-color: #54565714;
+}
+
+.div-dropdown-tt-qh{
+	overflow-y: scroll; 
+	max-height: 400px;
+}

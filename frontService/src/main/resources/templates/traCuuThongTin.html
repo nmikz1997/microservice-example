@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="layout_home :: head"></head>
+<style>
+.table td{
+	white-space: nowrap;
+}
+</style>
+<body>
+	<!-- Navbar -->
+	<!-- Navbar -->
+	<nav class="navbar-expand-md fixed-top navbar-dark" style="color:red; background-color: white;">
+		<div class="container">
+			<a href="/tra-cuu-thong-tin"><img alt="Logo" src="/assets/images/logo-vnpt.jpg" style="width:200px"/></a>
+      <!--<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar3SupportedContent" aria-controls="navbar3SupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+      <div class="collapse navbar-collapse text-center justify-content-center" id="navbar3SupportedContent">
+        <ul class="navbar-nav">
+          <li class="nav-item mx-3">
+            <a class="nav-link text-light" href="#"><i class="fa fa-fw fa-search"></i><b>TRA CỨU THÔNG TIN</b></a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link" href="#venue" contenteditable="true"><i class="fa fa-fw fa-support"></i>TRỢ GIÚP<b></b></a>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="/dang-nhap"><i class="fa fa-user fa-fw"></i>ĐĂNG NHẬP</a></li>
+        </ul>
+    </div> -->
+</div>
+</nav> 
+
+<!-- Cover -->
+<div class="d-flex cover section-aquamarine pt-5" style="background-image: url(&quot;assets/restaurant/cover_light.jpg&quot;);">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<div class="content">
+					<!-- Start marquee -->
+					<h5 class="textTitle">Tra cứu thông tin</h5>
+					<div class="container-fluid">
+						<div class="row divHomeDanhMuc">
+							<div class="container">
+								<div class="row row-tra-cuu-thong-tin">
+									<div class="col-md-4">
+										<h6 class="">Tỉnh Thành</h6>
+										<div class="btn-group p-0 w-100b btn-sm w-100">
+											<div class="form-group w-100">
+												<button class="btn dropdown-toggle btn-primary btn-sm w-100 btn-tt-id" name="btn-tt-id" id="btn-tt-id" data-id="0" data-toggle="dropdown">Tất cả</button>
+												<div class="dropdown-menu w-100">
+													<form class="form-inline">
+														<div class="input-group p-1 w-100">
+															<input type="text" class="form-control form-control-sm txt-search-tt-val" id="txt-search-tt-val" name="txt-search-tt-val" placeholder="Tìm tên Tỉnh/Thành">
+															<div class="input-group-append"></div>
+														</div>
+													</form>
+													<div class="div-ul-tinh-thanh-id" id="div-ul-tinh-thanh-id" name="div-ul-tinh-thanh-id">
+														<ul class="list-group list-group-sm div-dropdown-tt-qh" id="ul-tinh-thanh-id">
+															<li class=" border-0 list-group-item d-flex justify-content-between align-items-center">Đang tải...</li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-md-4">
+										<h6 class="">Quận/Huyện</h6>
+										<div class="btn-group p-0 w-100b btn-sm w-100">
+											<div class="form-group w-100">
+												<button class="btn dropdown-toggle btn-primary btn-sm w-100 btn-qh-id" name="btn-qh-id" id="btn-qh-id" data-id="0" data-toggle="dropdown"> Chọn Quận/Huyện</button>
+												<div class="dropdown-menu w-100">
+													<form class="form-inline">
+														<div class="input-group p-1  w-100">
+															<input type="text" class="form-control form-control-sm txt-search-qh-val" id="txt-search-qh-val" name="txt-search-qh-val"  placeholder="Tìm tên Quận/Huyện">
+														</div>
+													</form>
+													<div class="div-ul-quan-huyen-id" id="div-ul-quan-huyen-id" name="div-ul-quan-huyen-id">
+														<ul class="list-group list-group-sm div-dropdown-tt-qh">
+															<li class=" border-0 list-group-item d-flex justify-content-between align-items-center">Đang tải...</li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									
+									<div class="col-md-4">
+										<h6 class="">Phường/Xã</h6>
+										<div class="btn-group p-0 w-100b btn-sm w-100">
+											<div class="form-group w-100">
+												<button class="btn dropdown-toggle btn-primary btn-sm w-100 btn-px-id" name="btn-px-id" id="btn-px-id" data-toggle="dropdown"> Chọn Phường/Xã</button>
+												<div class="dropdown-menu w-100">
+													<form class="form-inline">
+														<div class="input-group p-1  w-100">
+															<input type="text" class="form-control form-control-sm txt-search-px-val" id="txt-search-px-val" name="txt-search-px-val"  placeholder="Tìm tên Phường/Xã">
+														</div>
+													</form>
+													<div class="div-ul-phuong-xa-id" id="div-ul-phuong-xa-id" name="div-ul-phuong-xa-id">
+														<ul class="list-group list-group-sm div-dropdown-tt-qh">
+															<li class=" border-0 list-group-item d-flex justify-content-between align-items-center">Đang tải...</li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>									
+									
+									<div class="col-md-12">
+										<h6 class="">Tìm theo tên</h6>
+										<div class="form-group">
+											<div class="input-group w-100">
+												<input type="text" class="form-control form-control-sm xt-search-by-name" name="xt-search-by-name" id="text-search-by-name" placeholder="Nhập đơn vị cần tìm">
+												<div class="input-group-append">
+													<button class="btn w-100 btn-primary btn-sm" type="button">
+														<i class="fa fa-search"> Tìm kiếm</i>
+													</button>
+												</div>
+											</div>   
+										</div> 
+									</div>
+								</div>
+							</div>
+							<div class="container-fluid">
+								<div class="row row-thong-bao-ket-qua" >
+									<div class="col-md-12">
+										<h6 class="" id="" name="">Đang tải...</h6>
+									</div>
+								</div>
+							</div>
+							<div class="container-fluid">
+								<div class="row row-hien-thi-ket-qua">
+									<div class="col-md-12">
+										<div class="table-responsive" style="" id="div-hien-thi-ket-qua"></div>
+									</div>
+								</div>
+							</div>
+							<div class="container-fluid">
+								<div class="row">
+									<div class="col-md-12">
+										<div class="row row-phan-trang">
+											<div class="col-md-12">
+												<ul class="pagination ul-pagination"></ul>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- END container-fluid -->
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<!-- Script: Smooth scrolling between anchors in the same page -->
+<script src="js/ping/smooth-scroll.js"></script>
+<script src="js/main/search_unit.js"></script>
+</body>
+<footer><div th:replace="layout :: frt-marquee"></div></footer>
+</html>
+<script type="text/javascript">
+
+	// Xu ly nut tim kiem
+	function xuLyTimKiem(){
+		var ma_tinh_thanh = $(".row-tra-cuu-thong-tin .btn-tt-id").attr("data-id");
+		//console.log("ma_tinh_thanh:"+ma_tinh_thanh);
+		// Neu ma_tinh_thanh == 0 va ma_quan_huyen == 0 => DS Tỉnh Thành tìm theo tên
+		if(ma_tinh_thanh == 0 && ma_quan_huyen == 0){
+		// Xu ly load ds tinh thanh
+
+		// Neu ma_tinh_thanh = 0 va ma_quan_huyen = -1 => danh sách Tỉnh/Thành
+	}else if(ma_tinh_thanh == 0 && ma_quan_huyen == -1 ){
+
+		// Neu ma_tinh_thanh = 0 va ma_quan_huyen != 0 => danh sách phường xã, tìm tỉnh thành của huyện và cập nhật cho Tỉnh/Thành, tìm theo tên phường xã.
+	}else if(ma_tinh_thanh == 0 && (ma_quan_huyen != 0 || ma_quan_huyen != -1)){
+
+	}
+}
+
+</script>
+
+<!-- Script xu ly lay du lieu Tinh Thanh, Quan Huyen -->
+<script type="text/javascript">
+	//var apiGatewayURL = "http://localhost:8111";
+	function xuLyTimKiem(){
+		var ma_tinh_thanh = $(".row-tra-cuu-thong-tin .btn-tt-id").attr("data-id");
+		if(ma_tinh_thanh == 0){
+			// Xu ly load ds tinh thanh
+		}
+	}
+	
+	// Xu ly lay du lieu TinhThanh tai trang hien tai
+	/*function getPageDataTinhThanh(ten_tinh_thanh, offset, limit){
+		console.log("offset:"+offset);
+		console.log("ten_tinh_thanh: "+ ten_tinh_thanh);
+		var formData = {
+			preName: ten_tinh_thanh,
+				//trang_thai: trang_thai,
+				offset: offset,
+				limit: limit
+			};
+			$.ajax({
+				type : "POST",
+				contentType : "application/json",
+				url : "http://localhost/index/province",
+				data : JSON.stringify(formData),
+				dataType : 'json',
+				timeout : 100000,
+				success : function(data) {
+					console.log("SUCCESS: ", data);	
+					var jsonMain = data;
+					var metadata = jsonMain.metadata;
+					var results = jsonMain.results;
+					var total_record = metadata.resultset.count;
+					if(total_record <= 0){
+				// Co du lieu tinh thanh => show du lieu vao bang.
+			}else{
+				$(".row-hien-thi-ket-qua  table>tbody").empty();
+				var results_length = results.length;
+				for(var results_i = 0 ; results_i < results.length; results_i++){
+					var rowData = "<tr>"+
+					"<th class='text-center'>"+ (offset + results_i + 1)+"</th>"+
+					"<td>"+results[results_i].pre_id+"</td>"+
+					"<td>"+results[results_i].pre_name+"</td>"+
+					"</tr>";
+					$(".row-hien-thi-ket-qua  table>tbody").append(rowData);  
+				}
+			}
+		},
+		error : function(e) {
+			console.log("ERROR: ", e);
+		}
+	});
+		}*/
+
+		/*function XuLyLoadTinhThanh(ten_tinh_thanh, offset, limit){
+			var formData = {
+				preName: ten_tinh_thanh,
+				//trang_thai: trang_thai,
+				offset: offset,
+				limit: limit
+			};
+			$.ajax({
+				type : "POST",
+				contentType : "application/json",
+				url : "http://localhost/index/province",
+				data : JSON.stringify(formData),
+				dataType : 'json',
+				timeout : 100000,
+				success : function(data) {
+					console.log("SUCCESS: ", data);	
+					var jsonMain = data;
+					var metadata = jsonMain.metadata;
+					var results = jsonMain.results;
+					var total_record = metadata.resultset.count;
+					console.log("total_recored:"+total_record);
+					$(".row-phan-trang .ul-pagination").empty();
+				// Khong co du lieu tinh thanh => ko show bang du lieu, thong bao du lieu rong
+				if(total_record <= 0){
+					$(".row-thong-bao-ket-qua h6").html("Không có dữ liệu kết quả");
+				// Co du lieu tinh thanh => show du lieu vao bang.
+			}else{
+				$(".row-thong-bao-ket-qua h6").html(total_record + " kết quả");
+				var table = "<table class='table table-bordered table-sm'>"+
+				"<thead class='table-primary'>"+
+				"<tr class=''>"+
+				"<th class=''>STT</th>"+
+				"<th>Mã</th>"+
+				"<th class='w-100 table-primary'>Tên</th>"+
+				"</tr>"+
+				"</thead>"+
+				"<tbody></tbody>"+
+				"</table>";
+
+				$(".row-hien-thi-ket-qua .table-responsive").append(table);
+
+				var results_length = results.length;
+				for(var results_i = 0 ; results_i < results.length; results_i++){
+					var rowData = "<tr>"+
+					"<th class='text-center'>"+ (results_i + 1)+"</th>"+
+					"<td>"+results[results_i].pre_id+"</td>"+
+					"<td>"+results[results_i].pre_name+"</td>"+
+					"</tr>";
+					$(".row-hien-thi-ket-qua  table>tbody").append(rowData);  
+				}
+
+
+				if(total_record > 0){
+                		// Tinh toan so trang
+                		var total_page = 0;
+                		if((total_record % limit) == 0){
+                			total_page = total_record / limit;
+                		}else{
+                			total_page = (total_record / limit) + 1;
+                		}
+
+                    	// Xu ly tao phan trang
+                    	for(var i = 1; i <= total_page; i++){
+                    		var data = "";
+                    		if(i == 1){
+                    			data = "<li class='page-item active' data-id="+i+"><a class='page-link'>" + i + "</a></li>";
+                    		}else{
+                    			data = "<li class='page-item' data-id="+i+"><a class='page-link'>" + i + "</a></li>";
+                    		}
+                    		
+                    		$(".row-phan-trang .ul-pagination").append(data);
+                    	}
+                    	
+                    	// Xu ly click phan trang
+                    	$('.row-phan-trang .ul-pagination li').click(function() {
+                    		$('.row-phan-trang .ul-pagination li').removeClass('active');
+                    		var cur_page = $(this).attr('data-id');
+                    		$(this).addClass("active");
+                    		var offset = ((cur_page - 1 ) * limit );
+                    		getPageDataTinhThanh(ten_tinh_thanh, offset, limit);
+                    	});
+                    }
+
+                }
+            },
+            error : function(e) {
+            	console.log("ERROR: ", e);
+            }
+        });
+		}*/
+	
+		var preId = 0;
+		var ditId = 0;
+		var wadId = 0;
+		var txtCanTim = "";
+
+		$(document).ready(function(){
+		// lay du lieu tinh thanh theo ten, trang thai, offset, limit
+		//XuLyLoadTinhThanh(" ", 0, 10);
+		//
+		
+		// Xu ly click nut tim kiem
+		$(".row-tra-cuu-thong-tin .fa-search").click(function(e){
+			//console.log("click tim kiem");
+			$(".row-hien-thi-ket-qua .table-responsive").empty();
+			txtCanTim = $(".row-tra-cuu-thong-tin .xt-search-by-name").val();
+			//var wadId = 0;
+			console.log("txtCanTim: "+txtCanTim);
+			
+			console.log(preId);
+			console.log(ditId);
+			console.log(wadId);
+			
+			XuLyLoadUnit(txtCanTim, preId, ditId, wadId, 0, 10);//(untName, preId, ditId, wadId, offset, limit)
+		});
+		
+		// Xu ly cho click Chon Tinh/Thanh
+		$(".row-tra-cuu-thong-tin .btn-tt-id").click(function(e){
+			$(".row-tra-cuu-thong-tin .txt-search-tt-val").val("");
+			$(".row-tra-cuu-thong-tin .txt-search-tt-val").keyup();
+		});
+		
+		// Xy ly nhap du lieu Tinh/Thanh va tim kiem Tinh/Thanh
+		$(".row-tra-cuu-thong-tin .txt-search-tt-val").keyup(function(){
+			var pro_name = $(".row-tra-cuu-thong-tin .txt-search-tt-val").val();
+			var formData = {
+				offset:0,
+				limit:64,
+				preName: pro_name+" "
+			}
+			$.ajax({
+				type : "POST",
+				contentType : "application/json",
+				url : "http://localhost:8111/danh-muc-dung-chung/index/province",
+				data : JSON.stringify(formData),
+				dataType : 'json',
+				timeout : 100000,
+				success : function(data) {
+					console.log("SUCCESS: ", data);
+					$(".div-ul-tinh-thanh-id ul").empty();
+					var jsonMain = data;
+					var metadata = jsonMain.metadata;
+
+					var results = jsonMain.results;
+					var results_length = results.length;
+					var data_li = "<li class='border-0 list-group-item d-flex justify-content-between align-items-center' data-id='0'>Tất cả</li>";
+					$(".div-ul-tinh-thanh-id ul").append(data_li);
+					for(var results_i = 0; results_i < results_length; results_i++ ){
+						var data_li = "<li class='border-0 list-group-item d-flex justify-content-between align-items-center' data-id='"+results[results_i].pre_id+"'>"+results[results_i].pre_name+"</li>";
+						$(".div-ul-tinh-thanh-id ul").append(data_li);
+					}
+					
+
+					$('#div-ul-tinh-thanh-id li').click(function() {
+						var idTinhThanh = $(this).attr('data-id');
+						var name = $(this).text();
+						$(".row-tra-cuu-thong-tin .btn-tt-id").attr("data-id", idTinhThanh);
+						$(".row-tra-cuu-thong-tin .btn-tt-id").html(name);
+						
+						ditId = 0;
+						wadId = 0;
+						
+						if(idTinhThanh == 0){
+							$(".row-tra-cuu-thong-tin .btn-qh-id").attr("data-id", "-1");
+							$(".row-tra-cuu-thong-tin .btn-qh-id").html("Chọn Quận/Huyện");
+							
+							$(".row-tra-cuu-thong-tin .btn-px-id").attr("data-id", "-1");
+							$(".row-tra-cuu-thong-tin .btn-px-id").html("Chọn Phường/Xã");
+							
+							preId = 0;
+						}else{
+							$(".row-tra-cuu-thong-tin .btn-qh-id").attr("data-id", "0");
+							$(".row-tra-cuu-thong-tin .btn-qh-id").html("Tất cả");
+							
+							$(".row-tra-cuu-thong-tin .btn-px-id").attr("data-id", "0");
+							$(".row-tra-cuu-thong-tin .btn-px-id").html("Tất cả");
+						}
+						//console.log(idTinhThanh);
+						preId = idTinhThanh;
+						
+						$(".row-hien-thi-ket-qua .table-responsive").empty();
+						XuLyLoadUnit(txtCanTim, idTinhThanh,0,0,0,10);//(untName, preId, ditId, wadId, offset, limit)
+					});
+
+				},
+				error : function(e) {
+					console.log("ERROR: ", e);
+				}
+			});
+		});
+		
+		$(".row-tra-cuu-thong-tin .btn-qh-id").click(function(e){
+			$(".row-tra-cuu-thong-tin .txt-search-qh-val").val("");
+			$(".row-tra-cuu-thong-tin .txt-search-qh-val").keyup();
+		});
+
+		$(".row-tra-cuu-thong-tin .txt-search-qh-val").keyup(function(){
+			var pro_name = $(".row-tra-cuu-thong-tin .txt-search-qh-val").val();
+			var ma_tinh_thanh = $(".row-tra-cuu-thong-tin .btn-tt-id").attr("data-id");
+			//console.log("ma_tinh_thanh:" + ma_tinh_thanh);
+			var formData = {
+				ditName: pro_name,
+				preId: ma_tinh_thanh
+			}
+			$.ajax({
+				type : "POST",
+				contentType : "application/json",
+				url : "http://localhost:8111/danh-muc-dung-chung/district/search",
+				data : JSON.stringify(formData),
+				dataType : 'json',
+				timeout : 100000,
+				success : function(data) {
+					console.log("SUCCESS: ", data);
+					$(".div-ul-quan-huyen-id ul").empty();
+					var jsonMain = data;
+					var metadata = jsonMain.metadata;
+
+					var results = jsonMain.results;
+					var results_length = results.length;
+					var data_li = "<li class='border-0 list-group-item d-flex justify-content-between align-items-center' data-id='0'>Chọn Quận/Huyện</li>";
+					$(".div-ul-quan-huyen-id ul").append(data_li);
+					for(var results_i = 0; results_i < results_length; results_i++ ){
+						var data_li = "<li class='border-0 list-group-item d-flex justify-content-between align-items-center' data-id='"+results[results_i].dit_id+"'>"+results[results_i].dit_name+"</li>";
+						$(".div-ul-quan-huyen-id ul").append(data_li);
+					}
+
+					$('#div-ul-quan-huyen-id li').click(function() {
+						var idQuanHuyen = $(this).attr('data-id');
+						var name = $(this).text();
+						$(".row-tra-cuu-thong-tin .btn-qh-id").attr("data-id", idQuanHuyen);
+						$(".row-tra-cuu-thong-tin .btn-qh-id").html(name);
+						
+						if(idQuanHuyen == 0){
+							$(".row-tra-cuu-thong-tin .btn-px-id").attr("data-id", "-1");
+							$(".row-tra-cuu-thong-tin .btn-px-id").html("Chọn Phường/Xã");
+						}else{
+							wadId = 0;
+							preId = 0;
+							$(".row-tra-cuu-thong-tin .btn-px-id").attr("data-id", "0");
+							$(".row-tra-cuu-thong-tin .btn-px-id").html("Tất cả");
+						}
+						
+						ditId = idQuanHuyen;
+						$(".row-hien-thi-ket-qua .table-responsive").empty();
+						XuLyLoadUnit(txtCanTim, 0, idQuanHuyen, 0, 0, 10);
+					}); 
+
+				},
+				error : function(e) {
+					console.log("ERROR: ", e);
+				}
+			});
+		});
+		
+		$(".row-tra-cuu-thong-tin .btn-px-id").click(function(e){
+			$(".row-tra-cuu-thong-tin .txt-search-px-val").val("");
+			$(".row-tra-cuu-thong-tin .txt-search-px-val").keyup();
+		});
+
+		$(".row-tra-cuu-thong-tin .txt-search-px-val").keyup(function(){
+			var wad_name = $(".row-tra-cuu-thong-tin .txt-search-px-val").val();
+			var dit_id =  $(".row-tra-cuu-thong-tin .btn-qh-id").attr("data-id");
+			
+			var formData = {
+					dit_id: dit_id,
+					wad_name: wad_name
+				}
+
+			$.ajax({
+				type : "POST",
+				contentType : "application/json",
+				url : "http://localhost:8111/danh-muc-dung-chung/ward/search",
+				data : JSON.stringify(formData),
+				dataType : 'json',
+				timeout : 100000,
+				success : function(data) {
+					console.log("SUCCESS: ", data);
+					$(".div-ul-phuong-xa-id ul").empty();
+					var jsonMain = data;
+					var metadata = jsonMain.metadata;
+
+					var results = jsonMain.results;
+					var results_length = results.length;
+					var data_li = "<li class='border-0 list-group-item d-flex justify-content-between align-items-center' data-id='0'>Chọn Phường/Xã</li>";
+					$(".div-ul-quan-huyen-id ul").append(data_li);
+					for(var results_i = 0; results_i < results_length; results_i++ ){
+						var data_li = "<li class='border-0 list-group-item d-flex justify-content-between align-items-center' data-id='"+results[results_i].wad_id+"'>"+results[results_i].wad_name+"</li>";
+						$(".div-ul-phuong-xa-id ul").append(data_li);
+					}
+
+					$('#div-ul-phuong-xa-id li').click(function() {
+						var idPX = $(this).attr('data-id');
+						var name = $(this).text();
+						$(".row-tra-cuu-thong-tin .btn-px-id").attr("data-id", idPX);
+						$(".row-tra-cuu-thong-tin .btn-px-id").html(name);
+						
+						wadId = idPX;
+						
+						if(idPX != 0)
+						{
+							ditId = 0;
+							preId = 0;
+						}
+						
+						$(".row-hien-thi-ket-qua .table-responsive").empty();
+						XuLyLoadUnit(txtCanTim, 0, 0, idPX, 0, 10);
+					}); 
+					
+				},
+				error : function(e) {
+					console.log("ERROR: ", e);
+				}
+			});
+			
+		});
+	});
+
+
+</script>

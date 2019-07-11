@@ -1,0 +1,36 @@
+<html>
+<head>
+<meta charset="utf-8" />
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+	<h1>Hello </h1>
+</body>
+
+<script>
+	var data = null;
+	var url = 'http://localhost:8111/danh-muc-dung-chung/units/search';
+	var obj = {
+			"offset":0,
+			"limit":10,
+			"untName":"",
+			"preId":1,
+			"ditId":0,
+			"wadId":0
+		};
+	
+	function axiosPost (url, obj){
+		axios.post(url, obj)
+		.then(function (response) {
+			data = response.data;
+			console.log(data);
+			})
+		.catch(function (error) {
+			console.log(error);
+			});
+	}
+	axiosPost(url, obj);
+	
+</script>
+
+</html>

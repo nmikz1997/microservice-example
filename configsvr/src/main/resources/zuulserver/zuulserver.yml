@@ -1,0 +1,46 @@
+server:
+  port: 8111
+message: "I am zuulServer service in default environment"
+
+spring:
+  application:
+    name: zuulserver
+
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
+    fetchRegistry: true
+    registerWithEureka: true
+
+logging:
+  pattern: 
+    console: "%d{yyyy-MM-dd HH:mm:ss} ${LOG_LEVEL_PATTERN:-%5p} %m%n"
+
+security: 
+  basic: 
+  enabled: false
+
+
+zuul:
+  ignoredServices: "*"
+  ignored-headers: Access-Control-Allow-Credentials, Access-Control-Allow-Origin
+  sensitiveHeaders: Cookie,Set-Cookie
+  routes:
+    users:
+      path: /**
+      url: http://localhost:8080/
+    configclient:
+      path: /configclient/**
+      serviceId: configclient
+    BackendService: 
+      path: /danh-muc-dung-chung/**
+      serviceId: backendService
+    ProvinceService: 
+      path: /location/**
+      serviceId: LocationService
+    UnitService: 
+      path: /units/**
+      serviceId: unit-service

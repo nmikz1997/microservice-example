@@ -1,0 +1,23 @@
+
+.divMainDanhMuc{
+	background-color: #ffffff;
+	border-radius: 5px;
+	padding: 10px;
+}
+
+.divMainDanhMuc thead th {
+    background-color: #0f9df7;
+    color: white;
+}
+
+.lableRed{
+	color: red;
+}
+.functionTitle{
+	margin-left: 5px;
+}
+
+/* Move mouse on li of sidebar-menu  */
+#sidebar-menu ul ul li:hover {
+    background-color: #03a9f461;
+}

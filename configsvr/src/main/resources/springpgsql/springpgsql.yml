@@ -1,0 +1,11 @@
+message: "I am Spring-SQL service in default environment"
+
+spring:
+  application:
+    name: springpgsql
+  datasource:
+    url: jdbc:postgresql://localhost/testdb
+    username: postgres
+    password: postgres
+  jpa:
+    generate-ddl: true
